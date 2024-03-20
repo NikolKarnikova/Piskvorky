@@ -1,0 +1,35 @@
+@font-face {
+font-family: "Lobster";
+src: url('Fonty/Lobster-Regular.ttf') format('ttf');
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.text{
+    color: white;
+    text-align: center;background-color: #283e50;
+}
+
+h1 {
+    font-family: "Lobster";
+    text-align: center;    
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 15px;
+}

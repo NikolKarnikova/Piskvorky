@@ -1,24 +1,63 @@
-@font-face {
-font-family: "Lobster";
-src: url('Fonty/Lobster-Regular.ttf') format('ttf');
+@import{
+    .lobster-regular {
+        font-family: "Lobster", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+}
+
+img{
+    border-radius: 10px 10px 0px 0px;
 }
 
 body{
     display: flex;
     justify-content: center;
     align-content: center;
+    background: linear-gradient(#615dad, #ffc8da);
 }
 
 .game{
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    width: 30%;
+    width: 350px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+}
+
+.pravidla{
+    background-color: #1fcca4;
+}
+.pravidla:hover{
+    background-color: #1cbb96;
+    cursor: pointer;
+}
+
+.zacit-hrat{
+    background-color: #0197f6;
+}
+
+.zacit-hrat:hover{
+    background-color: #0090e9;
+    cursor: pointer;
 }
 
 .text{
-    color: white;
+    color: #ffffff;
     text-align: center;background-color: #283e50;
 }
 

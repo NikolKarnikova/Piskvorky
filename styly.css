@@ -1,10 +1,9 @@
-@import{
-    .lobster-regular {
-        font-family: "Lobster", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-}
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 
 img{
     border-radius: 10px 10px 0px 0px;
@@ -41,6 +40,7 @@ button{
 
 .pravidla{
     background-color: #1fcca4;
+    border-bottom: 1px solid #283e50;
 }
 .pravidla:hover{
     background-color: #1cbb96;
@@ -63,7 +63,8 @@ button{
 
 h1 {
     font-family: "Lobster";
-    text-align: center;    
+    text-align: center;  
+    font-size: 40px;  
 }
 
 p{

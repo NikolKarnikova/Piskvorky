@@ -15,10 +15,8 @@ body{
     justify-content: center;
     align-content: flex-start;
     background: linear-gradient(#615dad, #ffc8da);
-    background-size: cover;
-    background-size: 100%;
+    min-height: 100vh;
     margin: 50px;
-   
 }
 
 .game{
@@ -86,6 +84,7 @@ p{
 
 .cart{
     max-width: 80vmin;
+
 }
 
 .cart-title h1 {

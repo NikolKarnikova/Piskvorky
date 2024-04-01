@@ -9,17 +9,19 @@ img{
     border-radius: 10px 10px 0px 0px;
 }
 
+
 body{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
     background: linear-gradient(#615dad, #ffc8da);
-    background-size: 100% 100%;
+    background-size: cover;
+    background-size: 100%;
+    margin: 50px;
    
 }
 
 .game{
-    margin: 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -68,6 +70,7 @@ h1 {
     font-weight: lighter;
     text-align: center;  
     font-size: 40px;  
+    color: white;
 }
 
 p{
@@ -78,3 +81,95 @@ p{
     padding: 15px;
 
 }
+
+/* Druhá část úkolu začíná tady */
+
+.cart{
+    max-width: 80vmin;
+}
+
+.cart-title h1 {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0; 
+    margin: 0;
+}
+
+.bar{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.bar-players{
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    justify-content:flex-start;    
+    flex-wrap: nowrap;
+    width: 50%;
+}
+
+.hraje{
+    color: #ffffff;
+    font-size: 18px;
+    padding: 0px;
+}
+
+
+.bar-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    width: 50%;
+    gap: 10px;
+}
+
+.home {
+    width: 46px;
+    height: 46px;
+    display: block;
+    padding: 7px 8px;
+    margin: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #1fcca4;
+}
+
+.home:hover{
+    background-color: #1cbb96;
+    cursor: pointer;
+}
+
+.reset {
+    display: block;
+    padding: 7px 8px;
+    border-radius: 5px;
+    background-color: #0197f6;
+}
+
+.reset:hover{
+    background-color: #0090e9;
+    cursor: pointer;
+}
+
+.cart-field {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0.9px solid #283e50;
+  }
+  
+  .box {
+    width: 10%;
+    aspect-ratio: 1/1 ;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border: 0.9px solid #283e50;
+  }
+
+  .box:hover, .box:focus {
+    background: rgba(255, 255, 255, 0.5);
+  }  

@@ -84,6 +84,7 @@ p{
 
 .cart{
     max-width: 80vmin;
+    min-width: 340px;
 
 }
 
@@ -158,15 +159,15 @@ p{
 .cart-field {
     display: flex;
     flex-wrap: wrap;
-    border: 0.9px solid #283e50;
   }
   
   .box {
-    width: 10%;
-    aspect-ratio: 1/1 ;
+    width: calc(10% - 2px); 
+    aspect-ratio: 1/1;
     margin: 0;
     background: rgba(255, 255, 255, 0.4);
-    border: 0.9px solid #283e50;
+    border: 1px solid #283e50;
+    box-sizing: border-box; 
   }
 
   .box:hover, .box:focus {

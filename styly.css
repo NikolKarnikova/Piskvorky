@@ -9,6 +9,9 @@ img{
     border-radius: 10px 10px 0px 0px;
 }
 
+*{ 
+    box-sizing: border-box;
+}
 
 body{
     display: flex;
@@ -162,12 +165,11 @@ p{
   }
   
   .box {
-    width: calc(10% - 2px); 
+    width: 10%;
     aspect-ratio: 1/1;
     margin: 0;
     background: rgba(255, 255, 255, 0.4);
     border: 1px solid #283e50;
-    box-sizing: border-box; 
   }
 
   .box:hover, .box:focus {

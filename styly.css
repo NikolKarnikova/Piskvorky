@@ -175,3 +175,19 @@ p{
   .box:hover, .box:focus {
     background: rgba(255, 255, 255, 0.5);
   }  
+
+  .board__field--circle{
+    background-image: url(images/circle-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70% 70%;
+
+  }
+
+  .board__field--cross{
+    background-image: url(images/crossblack.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65% 65%;
+
+  }

@@ -173,8 +173,8 @@ p{
   }
 
   .box:hover, .box:focus {
-    background: rgba(255, 255, 255, 0.5);
-  }  
+    background-color: rgba(255, 255, 255, 0.5);
+}  
 
   .board__field--circle{
     background-image: url(images/circle-black.svg);

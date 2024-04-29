@@ -1,29 +1,9 @@
 import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
-
 let currentPlayer = "circle";
-
-const selectbox = (event) => {
-  event.target.disabled = true;
-  if (currentPlayer === "circle") {
-    document.querySelector(".actualplayer").src = "images/circle.svg";
-    currentPlayer = "cross";
-    event.target.classList.add("board__field--cross");
-  } else {
-    currentPlayer = "circle";
-    event.target.classList.add("board__field--circle");
-    document.querySelector(".actualplayer").src = "images/cross.svg";
-  }
-  result();
-  console.log(createArray());
-};
-
 const boxes = document.querySelectorAll(".box");
-boxes.forEach((button) => {
-  button.addEventListener("click", selectbox);
-});
 
 const createArray = () => {
-  let array = [];
+  const array = [];
   boxes.forEach((button) => {
     if (button.classList.contains("board__field--circle")) {
       array.push("o");
@@ -36,29 +16,62 @@ const createArray = () => {
   return array;
 };
 
+const apiPlayer = async (player) => {
+  const playingBoard = createArray();
+
+  const response = await fetch(
+    "https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",
+    {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        board: playingBoard,
+        player: player,
+      }),
+    }
+  );
+  const data = await response.json();
+  const { x, y } = data.position;
+  const fieldIndex = x + y * 10;
+  const field = boxes[fieldIndex];
+  field.click();
+};
+
+const selectbox = (event) => {
+  event.target.disabled = true;
+  if (currentPlayer === "circle") {
+    document.querySelector(".actualplayer").src = "images/circle.svg";
+    currentPlayer = "cross";
+    apiPlayer("x");
+  } else {
+    currentPlayer = "circle";
+    event.target.classList.add("board__field--circle");
+    document.querySelector(".actualplayer").src = "images/cross.svg";
+  }
+  result();
+};
+
+boxes.forEach((button) => {
+  button.addEventListener("click", selectbox);
+});
+
 const result = () => {
   let array = createArray();
-
   const winner = findWinner(array);
 
   if (winner === "o" || winner === "x") {
     setTimeout(() => {
-      alert(`Vítězem je hráč se symbolem ${winner}.`);
-    }, 1000);
-    setTimeout(() => {
+      alert(`Vyhrál hráč se symbolem ${winner}.`);
       location.reload();
-    }, 2000);
-    return false;
+    }, 500);
   }
 
   if (winner === "tie") {
     setTimeout(() => {
       alert(`Hra skončila remízou.`);
-    }, 1000);
-    setTimeout(() => {
       location.reload();
-    }, 2000);
-    return false;
+    }, 500);
   }
-  return true;
 };

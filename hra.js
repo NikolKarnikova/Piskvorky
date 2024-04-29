@@ -42,15 +42,17 @@ const apiPlayer = async (player) => {
 const selectbox = (event) => {
   event.target.disabled = true;
   if (currentPlayer === "circle") {
-    document.querySelector(".actualplayer").src = "images/circle.svg";
-    currentPlayer = "cross";
-    apiPlayer("x");
-  } else {
-    currentPlayer = "circle";
     event.target.classList.add("board__field--circle");
     document.querySelector(".actualplayer").src = "images/cross.svg";
+    currentPlayer = "cross";
+    apiPlayer("x");
+    result();
+  } else {
+    currentPlayer = "circle";
+    event.target.classList.add("board__field--cross");
+    document.querySelector(".actualplayer").src = "images/circle.svg";
+    result();
   }
-  result();
 };
 
 boxes.forEach((button) => {
